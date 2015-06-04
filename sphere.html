@@ -9,10 +9,10 @@
 </head>
 <body>
 	<div id="sphere"></div>
-	<a href="http://thematicmapping.org/" target="parent" class="tm">
-		<img src="http://thematicmapping.org/img/thematicmapping.png">
-	</a>	
+
 	<script src="http://threejs.org/build/three.min.js"></script>
+	<script src="js/third-party/threejs/StereoEffect.js"></script>
+
 	<script src="js/third-party/threejs/OrbitControls.js"></script>	
 	<script src="js/third-party/threejs/Detector.js"></script>		
 	<script>
@@ -25,15 +25,20 @@
 		var scene = new THREE.Scene();
 
 		var camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
-		camera.position.x = 0.1;
+		//camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
+		
+		//camera.position.x = 0.1;
 
 		var renderer = Detector.webgl ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
+		
+		effect = new THREE.StereoEffect(renderer);
+		
 		renderer.setSize(width, height);
 
 		var sphere = new THREE.Mesh(
 			new THREE.SphereGeometry(100, 20, 20),
 			new THREE.MeshBasicMaterial({
-				map: THREE.ImageUtils.loadTexture('sphere.jpg')
+				map: THREE.ImageUtils.loadTexture('office.jpg')
 			})
 		);
 		sphere.scale.x = -1;
