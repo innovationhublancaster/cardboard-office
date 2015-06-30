@@ -55,7 +55,7 @@
 					font-size: 14px;
 					letter-spacing: 0.4em;
 					text-transform: uppercase;
-					margin-bottom: 2em;
+					margin-bottom: 3em;
 				}
 
 				#cover p {
@@ -71,7 +71,7 @@
 					width: 100%;
 					max-width: 235px;
 					color: white;
-					margin: 2em auto 0 auto;
+					margin: 3em auto 0 auto;
 					cursor: pointer;
 					font-weight: bold;
 					letter-spacing: 0.4em;
@@ -149,7 +149,7 @@
 					//sphere
 				 	width	= window.innerWidth,
 					height = window.innerHeight;
-					camera = new THREE.PerspectiveCamera(90, width / height, 0.001, 700);
+					camera = new THREE.PerspectiveCamera(75, width / height, 0.001, 700);
 
 					camera.position.set(0, 0, 0);
 					scene.add(camera);
@@ -185,16 +185,60 @@
 					window.addEventListener('deviceorientation', setOrientationControls, true);
 
 					var sphere = new THREE.Mesh(
-						new THREE.SphereGeometry(100, 20, 20),
+						new THREE.SphereGeometry(400, 32, 20),
 						new THREE.MeshBasicMaterial({
 							map: THREE.ImageUtils.loadTexture('office.jpg')
 						})
 					);
 					sphere.scale.x = -1;
+					sphere.transparent = false
 					scene.add(sphere);
+
+					var crateTexture = THREE.ImageUtils.loadTexture( 'ideas.png' );
+					var crateMaterial = new THREE.SpriteMaterial(
+						{ map: crateTexture, color: 0xffffff, fog: false }
+					);
+					var sprite2 = new THREE.Sprite( crateMaterial );
+					sprite2.position.set( 300, 180, 50 );
+					sprite2.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
+					sprite2.transparent = false
+					scene.add( sprite2 );
+
+					var sprite3 = new THREE.Sprite( crateMaterial );
+					sprite3.position.set( 200, -50, 150 );
+					sprite3.scale.set( 81.3333, 16.222, 0 ); // imageWidth, imageHeight
+					sprite3.transparent = false
+					scene.add( sprite3 );
+
+					var sprite5 = new THREE.Sprite( crateMaterial );
+					sprite5.position.set( 50, 0, 280 );
+					sprite5.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
+					sprite5.transparent = false
+					scene.add( sprite5 );
+
+
+					var sprite4 = new THREE.Sprite( crateMaterial );
+					sprite4.position.set( -300, 200, 100 );
+					sprite4.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
+					sprite4.transparent = false
+					scene.add( sprite4 );
+
+					// var crateTexture2 = THREE.ImageUtils.loadTexture( 'sprite2.png' );
+					// var crateMaterial2 = new THREE.SpriteMaterial(
+					// 	{ map: crateTexture2, color: 0xffffff, fog: false }
+					// );
+					// var sprite3 = new THREE.Sprite( crateMaterial2 );
+					// sprite3.position.set( 105, 75, 0 );
+					// sprite3.scale.set( 60, 60, 1.0 ); // imageWidth, imageHeight
+					// sprite3.transparent = false
+					// scene.add( sprite3 );
+
 
 					window.addEventListener('resize', resize, false);
 					setTimeout(resize, 1);
+
+					hideCover();
+
 				}
 
 
