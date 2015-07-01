@@ -4,6 +4,7 @@
 			<title>VR Office</title>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+			<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 			<style>
 
 				* {
@@ -11,7 +12,7 @@
 				}
 
 				a {
-					color: #6998AC;
+					color: #eb5063;
 					text-decoration: none;
 					font-weight: bold;
 				}
@@ -40,7 +41,7 @@
 					background-color: rgba(255, 255, 255, 0.6);
 					color: #252525;
 					display: block;
-					font-family: helvetica, arial, sans-serif;
+					font-family: 'Roboto', helvetica, arial, sans-serif;
 					padding: 2em 1.5em;
 				}
 
@@ -65,7 +66,7 @@
 
 				#start {
 					padding: 1em 1.5em;
-					background: #6998AC;
+					background: #eb5063;
 					text-transform: uppercase;
 					text-align: center;
 					width: 100%;
@@ -123,8 +124,6 @@
 
 				function init() {
 
-
-					console.log("init");
 					renderer = new THREE.WebGLRenderer();
 					element = renderer.domElement;
 					container = document.getElementById('office');
@@ -184,60 +183,108 @@
 
 					window.addEventListener('deviceorientation', setOrientationControls, true);
 
+					var officetexture = THREE.ImageUtils.loadTexture( 'office.jpg' );
+
 					var sphere = new THREE.Mesh(
 						new THREE.SphereGeometry(400, 32, 20),
 						new THREE.MeshBasicMaterial({
-							map: THREE.ImageUtils.loadTexture('office.jpg')
+							map: officetexture
 						})
 					);
+					officetexture.minFilter = THREE.LinearFilter;
+					officetexture.magFilter = THREE.LinearFilter;
 					sphere.scale.x = -1;
 					sphere.transparent = false
 					scene.add(sphere);
 
-					var crateTexture = THREE.ImageUtils.loadTexture( 'ideas.png' );
-					var crateMaterial = new THREE.SpriteMaterial(
-						{ map: crateTexture, color: 0xffffff, fog: false }
+					var info1texture = THREE.ImageUtils.loadTexture( 'info1.png' );
+					info1texture.minFilter = THREE.LinearFilter;
+					info1texture.magFilter = THREE.LinearFilter;
+					var info1material = new THREE.SpriteMaterial(
+						{ map: info1texture, color: 0xffffff, fog: false }
 					);
-					var sprite2 = new THREE.Sprite( crateMaterial );
-					sprite2.position.set( 300, 180, 50 );
-					sprite2.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
-					sprite2.transparent = false
-					scene.add( sprite2 );
+					var info2texture = THREE.ImageUtils.loadTexture( 'info2.png' );
+					info2texture.minFilter = THREE.LinearFilter;
+					info2texture.magFilter = THREE.LinearFilter;
+					var info2material = new THREE.SpriteMaterial(
+						{ map: info2texture, color: 0xffffff, fog: false }
+					);
+					var info3texture = THREE.ImageUtils.loadTexture( 'info3.png' );
+					info3texture.minFilter = THREE.LinearFilter;
+					info3texture.magFilter = THREE.LinearFilter;
+					var info3material = new THREE.SpriteMaterial(
+						{ map: info3texture, color: 0xffffff, fog: false }
+					);
+					var info4texture = THREE.ImageUtils.loadTexture( 'info4.png' );
+					info4texture.minFilter = THREE.LinearFilter;
+					info4texture.magFilter = THREE.LinearFilter;
+					var info4material = new THREE.SpriteMaterial(
+						{ map: info4texture, color: 0xffffff, fog: false }
+					);
+					var info5texture = THREE.ImageUtils.loadTexture( 'info5.png' );
+					info5texture.minFilter = THREE.LinearFilter;
+					info5texture.magFilter = THREE.LinearFilter;
+					var info5material = new THREE.SpriteMaterial(
+						{ map: info5texture, color: 0xffffff, fog: false }
+					);
+					var info6texture = THREE.ImageUtils.loadTexture( 'info6.png' );
+					info6texture.minFilter = THREE.LinearFilter;
+					info6texture.magFilter = THREE.LinearFilter;
+					var info6material = new THREE.SpriteMaterial(
+						{ map: info6texture, color: 0xffffff, fog: false }
+					);
+					var info7texture = THREE.ImageUtils.loadTexture( 'info7.png' );
+					info7texture.minFilter = THREE.LinearFilter;
+					info7texture.magFilter = THREE.LinearFilter;
+					var info7material = new THREE.SpriteMaterial(
+						{ map: info7texture, color: 0xffffff, fog: false }
+					);
 
-					var sprite3 = new THREE.Sprite( crateMaterial );
-					sprite3.position.set( 200, -50, 150 );
-					sprite3.scale.set( 81.3333, 16.222, 0 ); // imageWidth, imageHeight
-					sprite3.transparent = false
-					scene.add( sprite3 );
 
-					var sprite5 = new THREE.Sprite( crateMaterial );
-					sprite5.position.set( 50, 0, 280 );
-					sprite5.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
-					sprite5.transparent = false
-					scene.add( sprite5 );
+					var info1 = new THREE.Sprite( info1material );
+					info1.position.set( 280, 180, 50 );
+					info1.scale.set( 125, 125, 0 ); // imageWidth, imageHeight
+					info1.transparent = false
+					scene.add( info1 );
 
+					var info2 = new THREE.Sprite( info2material );
+					info2.position.set( 200, -50, 150 );
+					info2.scale.set( 90, 90, 0 ); // imageWidth, imageHeight
+					info2.transparent = false
+					scene.add( info2 );
 
-					var sprite4 = new THREE.Sprite( crateMaterial );
-					sprite4.position.set( -300, 200, 100 );
-					sprite4.scale.set( 122, 24.3333, 0 ); // imageWidth, imageHeight
-					sprite4.transparent = false
-					scene.add( sprite4 );
+					var info3 = new THREE.Sprite( info3material );
+					info3.position.set( 50, 0, 280 );
+					info3.scale.set( 100, 100, 0 ); // imageWidth, imageHeight
+					info3.transparent = false
+					scene.add( info3 );
 
-					// var crateTexture2 = THREE.ImageUtils.loadTexture( 'sprite2.png' );
-					// var crateMaterial2 = new THREE.SpriteMaterial(
-					// 	{ map: crateTexture2, color: 0xffffff, fog: false }
-					// );
-					// var sprite3 = new THREE.Sprite( crateMaterial2 );
-					// sprite3.position.set( 105, 75, 0 );
-					// sprite3.scale.set( 60, 60, 1.0 ); // imageWidth, imageHeight
-					// sprite3.transparent = false
-					// scene.add( sprite3 );
+					var info4 = new THREE.Sprite( info4material );
+					info4.position.set( -160, 100, 240 );
+					info4.scale.set( 105, 105, 0 ); // imageWidth, imageHeight
+					info4.transparent = false
+					scene.add( info4 );
 
+					var info5 = new THREE.Sprite( info5material );
+					info5.position.set( -250, 150, 100 );
+					info5.scale.set( 100, 100, 0 ); // imageWidth, imageHeight
+					info5.transparent = false
+					scene.add( info5 );
+
+					var info6 = new THREE.Sprite( info6material );
+					info6.position.set( -250, 130, -200 );
+					info6.scale.set( 120, 120, 0 ); // imageWidth, imageHeight
+					info6.transparent = false
+					scene.add( info6 );
+
+					var info7 = new THREE.Sprite( info7material );
+					info7.position.set( 200, 0, -230 );
+					info7.scale.set( 125, 125, 0 ); // imageWidth, imageHeight
+					info7.transparent = false
+					scene.add( info7 );
 
 					window.addEventListener('resize', resize, false);
 					setTimeout(resize, 1);
-
-					hideCover();
 
 				}
 
