@@ -32,7 +32,7 @@ function init() {
   scene = new THREE.Scene();
 
   //sphere
-   width	= window.innerWidth,
+  width = window.innerWidth,
   height = window.innerHeight;
   camera = new THREE.PerspectiveCamera(75, width / height, 0.001, 700);
 
@@ -69,7 +69,7 @@ function init() {
 
   window.addEventListener('deviceorientation', setOrientationControls, true);
 
-  var officetexture = THREE.ImageUtils.loadTexture( 'images/office.jpg' );
+  var officetexture = THREE.ImageUtils.loadTexture('images/office.jpg');
 
   var sphere = new THREE.Mesh(
     new THREE.SphereGeometry(400, 32, 20),
@@ -83,91 +83,105 @@ function init() {
   sphere.transparent = false
   scene.add(sphere);
 
-  var info1texture = THREE.ImageUtils.loadTexture( 'images/info1.png' );
+  var info1texture = THREE.ImageUtils.loadTexture('images/info1.png');
   info1texture.minFilter = THREE.LinearFilter;
   info1texture.magFilter = THREE.LinearFilter;
-  var info1material = new THREE.SpriteMaterial(
-    { map: info1texture, color: 0xffffff, fog: false }
-  );
-  var info2texture = THREE.ImageUtils.loadTexture( 'images/info2.png' );
+  var info1material = new THREE.SpriteMaterial({
+    map: info1texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info2texture = THREE.ImageUtils.loadTexture('images/info2.png');
   info2texture.minFilter = THREE.LinearFilter;
   info2texture.magFilter = THREE.LinearFilter;
-  var info2material = new THREE.SpriteMaterial(
-    { map: info2texture, color: 0xffffff, fog: false }
-  );
-  var info3texture = THREE.ImageUtils.loadTexture( 'images/info3.png' );
+  var info2material = new THREE.SpriteMaterial({
+    map: info2texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info3texture = THREE.ImageUtils.loadTexture('images/info3.png');
   info3texture.minFilter = THREE.LinearFilter;
   info3texture.magFilter = THREE.LinearFilter;
-  var info3material = new THREE.SpriteMaterial(
-    { map: info3texture, color: 0xffffff, fog: false }
-  );
-  var info4texture = THREE.ImageUtils.loadTexture( 'images/info4.png' );
+  var info3material = new THREE.SpriteMaterial({
+    map: info3texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info4texture = THREE.ImageUtils.loadTexture('images/info4.png');
   info4texture.minFilter = THREE.LinearFilter;
   info4texture.magFilter = THREE.LinearFilter;
-  var info4material = new THREE.SpriteMaterial(
-    { map: info4texture, color: 0xffffff, fog: false }
-  );
-  var info5texture = THREE.ImageUtils.loadTexture( 'images/info5.png' );
+  var info4material = new THREE.SpriteMaterial({
+    map: info4texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info5texture = THREE.ImageUtils.loadTexture('images/info5.png');
   info5texture.minFilter = THREE.LinearFilter;
   info5texture.magFilter = THREE.LinearFilter;
-  var info5material = new THREE.SpriteMaterial(
-    { map: info5texture, color: 0xffffff, fog: false }
-  );
-  var info6texture = THREE.ImageUtils.loadTexture( 'images/info6.png' );
+  var info5material = new THREE.SpriteMaterial({
+    map: info5texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info6texture = THREE.ImageUtils.loadTexture('images/info6.png');
   info6texture.minFilter = THREE.LinearFilter;
   info6texture.magFilter = THREE.LinearFilter;
-  var info6material = new THREE.SpriteMaterial(
-    { map: info6texture, color: 0xffffff, fog: false }
-  );
-  var info7texture = THREE.ImageUtils.loadTexture( 'images/info7.png' );
+  var info6material = new THREE.SpriteMaterial({
+    map: info6texture,
+    color: 0xffffff,
+    fog: false
+  });
+  var info7texture = THREE.ImageUtils.loadTexture('images/info7.png');
   info7texture.minFilter = THREE.LinearFilter;
   info7texture.magFilter = THREE.LinearFilter;
-  var info7material = new THREE.SpriteMaterial(
-    { map: info7texture, color: 0xffffff, fog: false }
-  );
+  var info7material = new THREE.SpriteMaterial({
+    map: info7texture,
+    color: 0xffffff,
+    fog: false
+  });
 
 
-  var info1 = new THREE.Sprite( info1material );
-  info1.position.set( 280, 180, 50 );
-  info1.scale.set( 125, 125, 0 ); // imageWidth, imageHeight
+  var info1 = new THREE.Sprite(info1material);
+  info1.position.set(280, 180, 50);
+  info1.scale.set(125, 125, 0); // imageWidth, imageHeight
   info1.transparent = false
-  scene.add( info1 );
+  scene.add(info1);
 
-  var info2 = new THREE.Sprite( info2material );
-  info2.position.set( 200, -50, 150 );
-  info2.scale.set( 90, 90, 0 ); // imageWidth, imageHeight
+  var info2 = new THREE.Sprite(info2material);
+  info2.position.set(200, -50, 150);
+  info2.scale.set(90, 90, 0); // imageWidth, imageHeight
   info2.transparent = false
-  scene.add( info2 );
+  scene.add(info2);
 
-  var info3 = new THREE.Sprite( info3material );
-  info3.position.set( 50, 0, 280 );
-  info3.scale.set( 100, 100, 0 ); // imageWidth, imageHeight
+  var info3 = new THREE.Sprite(info3material);
+  info3.position.set(50, 0, 280);
+  info3.scale.set(100, 100, 0); // imageWidth, imageHeight
   info3.transparent = false
-  scene.add( info3 );
+  scene.add(info3);
 
-  var info4 = new THREE.Sprite( info4material );
-  info4.position.set( -160, 100, 240 );
-  info4.scale.set( 105, 105, 0 ); // imageWidth, imageHeight
+  var info4 = new THREE.Sprite(info4material);
+  info4.position.set(-160, 100, 240);
+  info4.scale.set(105, 105, 0); // imageWidth, imageHeight
   info4.transparent = false
-  scene.add( info4 );
+  scene.add(info4);
 
-  var info5 = new THREE.Sprite( info5material );
-  info5.position.set( -250, 150, 100 );
-  info5.scale.set( 100, 100, 0 ); // imageWidth, imageHeight
+  var info5 = new THREE.Sprite(info5material);
+  info5.position.set(-250, 150, 100);
+  info5.scale.set(100, 100, 0); // imageWidth, imageHeight
   info5.transparent = false
-  scene.add( info5 );
+  scene.add(info5);
 
-  var info6 = new THREE.Sprite( info6material );
-  info6.position.set( -250, 130, -200 );
-  info6.scale.set( 120, 120, 0 ); // imageWidth, imageHeight
+  var info6 = new THREE.Sprite(info6material);
+  info6.position.set(-250, 130, -200);
+  info6.scale.set(120, 120, 0); // imageWidth, imageHeight
   info6.transparent = false
-  scene.add( info6 );
+  scene.add(info6);
 
-  var info7 = new THREE.Sprite( info7material );
-  info7.position.set( 200, 0, -230 );
-  info7.scale.set( 125, 125, 0 ); // imageWidth, imageHeight
+  var info7 = new THREE.Sprite(info7material);
+  info7.position.set(200, 0, -230);
+  info7.scale.set(125, 125, 0); // imageWidth, imageHeight
   info7.transparent = false
-  scene.add( info7 );
+  scene.add(info7);
 
   window.addEventListener('resize', resize, false);
   setTimeout(resize, 1);
