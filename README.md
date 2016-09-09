@@ -2,7 +2,7 @@
 
 View the Innovation Hub's office in VR with Google Cardboard. Created for the UCISA SS15 conference presentation.
 
-This was created by hacking together buy building a photshphere viewer in three.js with stereo and using code from Google's VR expeiments to make it cardboard friendly. 
+This was created by hacking together by building a photshphere viewer in three.js with stereo view for VR using code from Google's VR expeiments to make it cardboard friendly. 
 
 [Demo](http://in-production.lancaster.ac.uk/cardboard-office)
 
